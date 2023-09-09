@@ -19,8 +19,8 @@ fn print_val(string: String) -> String {
 }
 
 #[post("/add", data = "<input>")]
-fn add(input: From<AddInput>) -> String {
-    format!("Answer is: {}",  data)
+fn add(input: Form<AddInput>) -> String {
+    format!("Answer is: {}",  "abc")
 }
 
 
