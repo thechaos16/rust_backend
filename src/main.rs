@@ -3,6 +3,10 @@
 use rocket_contrib::json::Json;
 use serde::Deserialize;
 
+mod path_handler;
+use path_handler::get_urlx_urly;
+use path_handler::get_path;
+
 
 #[derive(Debug, PartialEq, Eq, Deserialize)]
 struct AddInput {
@@ -17,6 +21,9 @@ fn index() -> &'static str {
 
 #[get("/print/<string>")]
 fn print_val(string: String) -> String {
+    let start_point = get_urlx_urly(37.556757, 127.028571);
+    let end_point = get_urlx_urly(37.556124, 127.031843);
+    println!("{:?}", get_path(start_point, end_point));
     format!("Hello, {}!", string.as_str())
 }
 
