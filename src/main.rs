@@ -36,3 +36,6 @@ fn add(input: Json<AddInput>) -> String {
 fn main() {
     rocket::ignite().mount("/", routes![index, print_val, add]).launch();
 }
+
+#[cfg(test)]
+mod test_sample;
