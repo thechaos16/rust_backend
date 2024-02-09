@@ -25,5 +25,6 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
+          file: ./scripts/Dockerfile
           push: true
           tags: thechaos16/rust_backend
